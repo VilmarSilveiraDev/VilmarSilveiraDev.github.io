@@ -6,7 +6,6 @@
     <title>Vilmar Silveira | Software Engineer & RPA Specialist</title>
     
     <meta name="description" content="Software Engineer especializado em RPA, Automação, Chatbots WhatsApp e Web Apps. Criador do Sistema RADAR.">
-    <meta name="keywords" content="Vilmar Silveira, Software Engineer, RPA, Python, Go, React, WhatsApp Chatbot, Sistema RADAR, Automação">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,10 +13,11 @@
     
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-
-    <div class="translate-container">
+<body class="dark-theme"> <div class="top-bar">
         <div id="google_translate_element"></div>
+        <button id="theme-toggle" aria-label="Mudar tema">
+            <span id="theme-icon">🌙</span>
+        </button>
     </div>
 
     <header>
@@ -82,6 +82,28 @@
                 layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
                 autoDisplay: false
             }, 'google_translate_element');
+        }
+
+        // Lógica do Tema
+        const btn = document.getElementById("theme-toggle");
+        const icon = document.getElementById("theme-icon");
+        
+        btn.addEventListener("click", function() {
+            document.body.classList.toggle("light-theme");
+            
+            if (document.body.classList.contains("light-theme")) {
+                icon.textContent = "☀️";
+                localStorage.setItem("theme", "light");
+            } else {
+                icon.textContent = "🌙";
+                localStorage.setItem("theme", "dark");
+            }
+        });
+
+        // Manter o tema ao recarregar
+        if (localStorage.getItem("theme") === "light") {
+            document.body.classList.add("light-theme");
+            icon.textContent = "☀️";
         }
     </script>
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
