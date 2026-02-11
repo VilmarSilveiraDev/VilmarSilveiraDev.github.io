@@ -13,7 +13,9 @@
     
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="dark-theme"> <div class="top-bar">
+<body class="dark-theme">
+
+    <div class="top-bar">
         <div id="google_translate_element"></div>
         <button id="theme-toggle" aria-label="Mudar tema">
             <span id="theme-icon">🌙</span>
@@ -48,12 +50,30 @@
     </section>
 
     <section id="work">
-        <h2>Projeto em Destaque</h2>
-        <div class="card featured">
-            <h3>Sistema RADAR</h3>
-            <p>Ecossistema modular que processa mais de <strong>2 milhões de encomendas diariamente</strong>. Utiliza arquitetura de robôs inteligentes para garantir a integridade e análise de dados em tempo real.</p>
-            <div class="tech-tags">
-                <span>Go</span> <span>Python</span> <span>gRPC</span> <span>PostgreSQL</span> <span>React</span>
+        <h2>Projetos em Destaque</h2>
+        <div class="grid">
+            <div class="card featured">
+                <h3>Sistema RADAR</h3>
+                <p>Ecossistema modular que processa mais de <strong>2 milhões de encomendas diariamente</strong>. Utiliza robôs inteligentes para análise de dados em tempo real.</p>
+                <div class="tech-tags">
+                    <span>Go</span> <span>Python</span> <span>gRPC</span> <span>PostgreSQL</span> <span>React</span>
+                </div>
+            </div>
+
+            <div class="card featured">
+                <h3>Robôs de Automação</h3>
+                <p>Desenvolvimento de automações complexas para tarefas repetitivas, integração de sistemas legados e manipulação de grandes volumes de dados.</p>
+                <div class="tech-tags">
+                    <span>Python</span> <span>Selenium</span> <span>PyAutoGui</span> <span>Pandas</span>
+                </div>
+            </div>
+
+            <div class="card featured">
+                <h3>Chatbots WhatsApp</h3>
+                <p>Soluções inteligentes para comunicação automatizada, utilizando APIs de mensageria para otimizar o atendimento e interação com o usuário.</p>
+                <div class="tech-tags">
+                    <span>Java</span> <span>JavaScript</span> <span>Node.js</span>
+                </div>
             </div>
         </div>
     </section>
@@ -84,13 +104,11 @@
             }, 'google_translate_element');
         }
 
-        // Lógica do Tema
         const btn = document.getElementById("theme-toggle");
         const icon = document.getElementById("theme-icon");
         
         btn.addEventListener("click", function() {
             document.body.classList.toggle("light-theme");
-            
             if (document.body.classList.contains("light-theme")) {
                 icon.textContent = "☀️";
                 localStorage.setItem("theme", "light");
@@ -100,7 +118,6 @@
             }
         });
 
-        // Manter o tema ao recarregar
         if (localStorage.getItem("theme") === "light") {
             document.body.classList.add("light-theme");
             icon.textContent = "☀️";
