@@ -16,7 +16,7 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    top: 0 !important; /* Corrige erro do Google Translate */
+    top: 0 !important; 
 }
 
 /* Container do Tradutor */
@@ -124,7 +124,28 @@ footer {
 .social-links a { color: var(--text-primary); text-decoration: none; margin: 0 10px; font-weight: bold; }
 .social-links a:hover { color: var(--accent-color); }
 
-/* Remove a barra azul do Google Translate no topo */
+/* --- CORREÇÃO DO TRADUTOR (TEXTO BRANCO) --- */
+
+/* Força o fundo do botão e a cor do texto */
+.goog-te-gadget-simple {
+    background-color: var(--card-bg) !important;
+    border: 1px solid var(--border-color) !important;
+    padding: 6px 10px !important;
+    border-radius: 6px !important;
+    cursor: pointer;
+}
+
+/* Cor do texto dentro do botão */
+.goog-te-gadget-simple span, 
+.goog-te-gadget-simple div {
+    color: var(--text-primary) !important;
+    font-size: 14px !important;
+}
+
+/* Esconde o logo do Google para ficar mais limpo */
+.goog-te-gadget-icon {
+    display: none !important;
+}
+
+/* Remove a barra azul que o Google coloca no topo */
 .goog-te-banner-frame.skiptranslate { display: none !important; }
-.goog-te-gadget-simple { background-color: var(--card-bg) !important; border: 1px solid var(--border-color) !important; padding: 5px !important; border-radius: 4px !important; }
-.goog-te-gadget-simple .goog-te-menu-value span { color: var(--text-primary) !important; }
