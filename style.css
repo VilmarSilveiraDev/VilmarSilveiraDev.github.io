@@ -1,4 +1,3 @@
-/* Variáveis de Cores - Estilo Dark Técnico */
 :root {
     --bg-color: #0b0e14;
     --card-bg: #161b22;
@@ -17,10 +16,22 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.6;
+    top: 0 !important; /* Corrige erro do Google Translate */
+}
+
+/* Container do Tradutor */
+.translate-container {
+    background: var(--bg-color);
+    padding: 10px 20px;
+    border-bottom: 1px solid var(--border-color);
+    text-align: right;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 header {
-    height: 90vh;
+    height: 80vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -29,26 +40,21 @@ header {
     padding: 0 20px;
 }
 
-h1 { 
-    font-size: clamp(2.5rem, 8vw, 4rem); 
-    margin: 10px 0; 
-    color: var(--text-primary);
-}
+h1 { font-size: clamp(2.5rem, 8vw, 4rem); margin: 10px 0; }
 
 .code-font { 
     font-family: 'Fira Code', monospace; 
     color: var(--accent-color); 
-    font-size: 1.1rem;
 }
 
 .subtitle { 
     font-size: 1.2rem; 
     color: var(--text-secondary); 
-    max-width: 700px;
+    max-width: 700px; 
 }
 
 section { 
-    padding: 100px 20px; 
+    padding: 80px 20px; 
     max-width: 1100px; 
     margin: 0 auto; 
 }
@@ -57,7 +63,7 @@ h2 {
     font-size: 2rem;
     border-bottom: 1px solid var(--border-color); 
     padding-bottom: 15px; 
-    margin-bottom: 50px; 
+    margin-bottom: 40px; 
 }
 
 .grid { 
@@ -77,18 +83,11 @@ h2 {
 .card:hover { 
     transform: translateY(-8px); 
     border-color: var(--accent-color);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
-.card h3 { 
-    margin-top: 0; 
-    color: var(--accent-color); 
-    font-size: 1.4rem;
-}
+.card h3 { color: var(--accent-color); margin-top: 0; }
 
-.featured {
-    border-left: 4px solid var(--accent-color);
-}
+.featured { border-left: 4px solid var(--accent-color); }
 
 .tech-tags {
     margin-top: 20px;
@@ -109,19 +108,11 @@ h2 {
 
 .experience-item { 
     margin-bottom: 40px; 
-    padding-left: 25px; 
-    border-left: 2px solid var(--border-color);
+    padding-left: 20px; 
+    border-left: 2px solid var(--accent-color); 
 }
 
-.experience-item:hover {
-    border-left-color: var(--accent-color);
-}
-
-.date { 
-    font-family: 'Fira Code', monospace;
-    font-size: 0.85rem; 
-    color: var(--accent-color); 
-}
+.date { font-family: 'Fira Code', monospace; color: var(--accent-color); font-size: 0.9rem; }
 
 footer { 
     text-align: center; 
@@ -130,17 +121,10 @@ footer {
     color: var(--text-secondary); 
 }
 
-.social-links a { 
-    color: var(--text-primary); 
-    text-decoration: none; 
-    margin: 0 10px;
-    font-weight: bold;
-}
-
+.social-links a { color: var(--text-primary); text-decoration: none; margin: 0 10px; font-weight: bold; }
 .social-links a:hover { color: var(--accent-color); }
 
-/* Responsividade para celulares */
-@media (max-width: 768px) {
-    header { height: auto; padding: 100px 20px; }
-    h1 { font-size: 2.5rem; }
-}
+/* Remove a barra azul do Google Translate no topo */
+.goog-te-banner-frame.skiptranslate { display: none !important; }
+.goog-te-gadget-simple { background-color: var(--card-bg) !important; border: 1px solid var(--border-color) !important; padding: 5px !important; border-radius: 4px !important; }
+.goog-te-gadget-simple .goog-te-menu-value span { color: var(--text-primary) !important; }
